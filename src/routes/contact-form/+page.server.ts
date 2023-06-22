@@ -30,18 +30,6 @@ export const actions = {
 
 		const AIRTABLE_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/submissions`
 		// console.log("superform airtable url: ", AIRTABLE_URL)
-
-		// let data = {
-		// 	records: [
-		// 		{
-		// 			fields: {
-		// 				name,
-		// 				email,
-		// 				message,
-		// 			},
-		// 		},
-		// 	],
-		// }
 		let data = {"fields": { 
 			"Name": name,
 			"Email":email,
