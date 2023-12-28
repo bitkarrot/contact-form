@@ -25,10 +25,26 @@
 			submission_status = 'success'
 		},
 	})
+
+	let showModal = false;
+
+	function openModal() {
+	showModal = true;
+	}
+
+	function closeModal() {
+	showModal = false;
+	}
+
+	function openLinkNewWindow() {
+		const url = 'https://www.example.com'; // Replace with your link
+		window.open(url, '_blank');
+	}
+
 </script>
 
 <div class="mx-auto max-w-xl">
-	<h2>Contact Us</h2>
+	<h2>Contact Us Form</h2>
 
 	{#if submission_status === 'submitting'}
 		<p>Submitting...</p>
@@ -37,16 +53,24 @@
 	{:else if submission_status === 'success'}
 		<p>Submission success.</p>
 
-		<button
-			data-sveltekit-reload
-			on:click={() => {
-				submission_status = ''
-			}}
-			class="btn btn-primary w-full"
-		>
-			Submit another?
-		</button>
-	{:else}
+		<div>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<button on:click={openModal}>Open Modal</button>
+			{#if showModal}
+			<div class="modal-overlay">
+				<div class="modal">
+					<div class="modal-content">
+						<!-- svelte-ignore a11y-click-events-have-key-events -->
+						<span class="close" on:click={closeModal}>&times;</span>
+						<!-- Modal content here -->
+						<p>This is the modal content</p>
+					</div>
+				</div>
+			</div>
+		{/if}
+		</div>
+
+		{:else}
 		<form method="POST" use:enhance>
 			<label for="name" class="label">
 				<span class="label-text">Name</span>
@@ -125,6 +149,8 @@
 		</form>
 	{/if}
 
+	<div class="">
+		<hr/>
 	<p>
 		<a
 			href="/"
@@ -134,5 +160,51 @@
 			Back
 		</a>
 	</p>
+	</div>
+
 
 </div>
+
+
+<style>
+
+/* CSS styles for the modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  /* CSS styles for the modal */
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    margin: auto;
+  }
+
+  /* CSS styles for the modal content */
+  .modal-content {
+    /* Styles for the content area */
+  }
+
+  /* CSS styles for the close button */
+  .close {
+	color: white;
+	background-color: red;
+    position: relative;
+	padding: 5px;
+	top: 0px;
+    right: 10px;
+    cursor: pointer;
+  }
+</style>
