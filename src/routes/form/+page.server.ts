@@ -28,7 +28,7 @@ export const actions = {
 		
 		const { name, email, message } = form.data
 
-		const AIRTABLE_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/submissions`
+		const AIRTABLE_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/registrations`
 		console.log("superform airtable url: ", AIRTABLE_URL)
 		let data = {"fields": { 
 			"Name": name,
@@ -38,7 +38,7 @@ export const actions = {
 
 		console.log("super form stringifyd data: ", JSON.stringify(data))
 
-		base('submissions').create([
+		base('registrations').create([
 			data
 		  ], function(err, records) {
 			if (err) {
