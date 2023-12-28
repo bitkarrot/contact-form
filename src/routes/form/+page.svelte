@@ -50,13 +50,13 @@
 
 		<div>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<button on:click={openLinkNewWindow}>Pay with			
-				<img src="https://lnbits.com/assets/images/logo/logo.svg" width="80px" alt="Button Image" />
+			<button on:click={openLinkNewWindow}> Pay with			
+				<img src="https://lnbits.com/assets/images/logo/logo.svg" width="80px" alt="LNBits Image" />
 			</button>
 
 		</div>
 
-		{:else}
+	{:else}
 
 		<form method="POST" use:enhance>
 			<label for="name" class="label">
@@ -124,7 +124,7 @@
 						? 'text-error'
 						: 'text-base-100'}"
 				>
-					<!-- {$errors.message} -->
+					 {$errors.message}
 				</span>
 			</label>
 
@@ -136,7 +136,7 @@
 		</form>
 	{/if}
 
-	<div class="">
+	<div>
 		<hr/>
 	<p>
 		<a

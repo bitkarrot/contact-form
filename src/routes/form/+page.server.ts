@@ -5,8 +5,8 @@ import { z } from 'zod'
 import Airtable from 'airtable';
 
 const base = new Airtable({apiKey: AIRTABLE_API_KEY}).base(AIRTABLE_BASE_ID);
-// console.log("airtable base id: ", AIRTABLE_BASE_ID)
-// console.log("airtable base api key: ",AIRTABLE_API_KEY)
+console.log("airtable base id: ", AIRTABLE_BASE_ID)
+console.log("airtable base api key: ",AIRTABLE_API_KEY)
 
 const new_contact = z.object({
 	name: z.string(),
@@ -29,24 +29,24 @@ export const actions = {
 		const { name, email, message } = form.data
 
 		const AIRTABLE_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/submissions`
-		// console.log("superform airtable url: ", AIRTABLE_URL)
+		console.log("superform airtable url: ", AIRTABLE_URL)
 		let data = {"fields": { 
 			"Name": name,
 			"Email":email,
 			"Message": message
 		}}
 
-		// console.log("super form stringifyd data: ", JSON.stringify(data))
+		console.log("super form stringifyd data: ", JSON.stringify(data))
 
 		base('submissions').create([
 			data
 		  ], function(err, records) {
 			if (err) {
-//			  console.error(err);
+			  console.error(err);
 			  return;
 			}
 			records.forEach(function (record) {
-//			  console.log(record.getId());
+			  console.log(record.getId());
 			});
 		  });
 
