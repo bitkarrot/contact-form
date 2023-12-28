@@ -37,40 +37,50 @@
 	}
 
 	function openLinkNewWindow() {
-		const url = 'https://www.example.com'; // Replace with your link
+		const url = 'https://satspaylink.vercel.app/fiat/USD/amt/30/desc/Membership'; // Replace with your link
 		window.open(url, '_blank');
 	}
 
 </script>
 
 <div class="mx-auto max-w-xl">
-	<h2>Contact Us Form</h2>
+	<h2>Registration Form</h2>
+	<p>
+		This is a sample Registration Form that sends data to Airtable
+		The registration fee is 30 usd, payable in satoshis via LNBits.
+	</p>
 
 	{#if submission_status === 'submitting'}
 		<p>Submitting...</p>
 	{:else if submission_status === 'failed'}
 		<p>Submission failed.</p>
 	{:else if submission_status === 'success'}
-		<p>Submission success.</p>
+		<p>Submission success.<br/> 
+		Please pay Lightning Invoice below, link will open in new window.</p>
 
 		<div>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<button on:click={openModal}>Open Modal</button>
+			<button on:click={openLinkNewWindow}>Pay with
+			
+				<img src="https://lnbits.com/assets/images/logo/logo.svg" width="80px" alt="Button Image" />
+			</button>
+
+			<!-- <button on:click={openModal}>Open Modal</button>
 			{#if showModal}
 			<div class="modal-overlay">
 				<div class="modal">
-					<div class="modal-content">
+					<div class="modal-content"> -->
 						<!-- svelte-ignore a11y-click-events-have-key-events -->
-						<span class="close" on:click={closeModal}>&times;</span>
-						<!-- Modal content here -->
+						<!-- <span class="close" on:click={closeModal}>&times;</span>
 						<p>This is the modal content</p>
 					</div>
 				</div>
 			</div>
-		{/if}
+			{/if} -->
 		</div>
 
 		{:else}
+
 		<form method="POST" use:enhance>
 			<label for="name" class="label">
 				<span class="label-text">Name</span>
@@ -165,7 +175,7 @@
 
 </div>
 
-
+<!-- 
 <style>
 
 /* CSS styles for the modal overlay */
@@ -207,4 +217,4 @@
     right: 10px;
     cursor: pointer;
   }
-</style>
+</style> -->
