@@ -3,7 +3,7 @@
 	import { z } from 'zod'
 
 	export let data
-
+ 
 	let submission_status = ''
 
 	const new_contact = z.object({
@@ -25,16 +25,6 @@
 			submission_status = 'success'
 		},
 	})
-
-	let showModal = false;
-
-	function openModal() {
-	showModal = true;
-	}
-
-	function closeModal() {
-	showModal = false;
-	}
 
 	function openLinkNewWindow() {
 		const url = 'https://satspaylink.vercel.app/fiat/USD/amt/30/desc/Membership'; // Replace with your link
@@ -60,23 +50,10 @@
 
 		<div>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<button on:click={openLinkNewWindow}>Pay with
-			
+			<button on:click={openLinkNewWindow}>Pay with			
 				<img src="https://lnbits.com/assets/images/logo/logo.svg" width="80px" alt="Button Image" />
 			</button>
 
-			<!-- <button on:click={openModal}>Open Modal</button>
-			{#if showModal}
-			<div class="modal-overlay">
-				<div class="modal">
-					<div class="modal-content"> -->
-						<!-- svelte-ignore a11y-click-events-have-key-events -->
-						<!-- <span class="close" on:click={closeModal}>&times;</span>
-						<p>This is the modal content</p>
-					</div>
-				</div>
-			</div>
-			{/if} -->
 		</div>
 
 		{:else}
