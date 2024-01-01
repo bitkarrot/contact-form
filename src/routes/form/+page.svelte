@@ -51,7 +51,7 @@
 		<div>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<button on:click={openLinkNewWindow}> Pay with			
-				<img src="https://lnbits.com/assets/images/logo/logo.svg" width="80px" alt="LNBits Image" />
+				<img src="/lnbits.svg" width="80px" alt="LNBits Image" />
 			</button>
 
 		</div>
