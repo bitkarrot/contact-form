@@ -1,4 +1,4 @@
-# Simple Registration form with LNBits pay button and airtable integration
+# Simple Registration with LNBits pay button + Airtable
 
 What is it? 
 SvelteKit contact form submission with Airtable and a LNBits Pay Button for the fee in lightning sats.
