@@ -9,11 +9,9 @@ The source code for the proxy is here at https://github.com/bitkarrot/satspayses
 Set environment variables first. we are using AIRTABLE_API_KEY interchangably with AIRTABLE_TOKEN
 in this forked repository
 
-Check out [the blog post] on configuration and how to get the
+Check out [the blog post](https://scottspence.com/posts/make-a-contact-form-with-sveltekit-and-airtable) on configuration and how to get the
 `AIRTABLE_BASE_ID` and `AIRTABLE_TOKEN` for the project.
 
-[the blog post for Airtable - Svelte ]:
-	https://scottspence.com/posts/make-a-contact-form-with-sveltekit-and-airtable
 
 # Flow in 1-2-3
 
