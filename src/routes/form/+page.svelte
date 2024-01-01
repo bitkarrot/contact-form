@@ -27,7 +27,7 @@
 	})
 
 	function openLinkNewWindow() {
-		const url = 'https://satspaylink.vercel.app/fiat/USD/amt/30/desc/Membership'; // Replace with your link
+		const url = 'https://satspaylink.vercel.app/fiat/USD/amt/1/desc/Membership'; // Replace with your link
 		window.open(url, '_blank');
 	}
 
@@ -37,7 +37,7 @@
 	<h2>Registration Form</h2>
 	<p>
 		This is a sample Registration Form that sends data to Airtable
-		The registration fee is 30 usd, payable in satoshis via LNBits.
+		The registration fee is 1 usd, payable in satoshis via LNBits.
 	</p>
 
 	{#if submission_status === 'submitting'}
